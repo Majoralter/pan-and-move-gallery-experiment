@@ -1,0 +1,55 @@
+*,*::before,*::after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    overflow: hidden;
+    background-color: rgb(255, 235, 168);
+}
+
+.container-wrapper{
+    width: 1800px;
+    height: 1376px;
+    cursor: pointer;
+
+    .container {
+            display: grid;
+            grid-template-columns: repeat(5, 360px);
+            padding: 64px 80px;
+            position: absolute;
+    
+            div {
+                width: 424px;
+                height: 400px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+    
+            div:nth-child(odd) {
+                img {
+                    height: 300px;
+                    width: 300px;
+                }
+            }
+    
+            div:nth-child(even) {
+                img {
+                    height: 200px;
+                    width: 300px;
+                }
+            }
+    
+            .img {
+                object-fit: cover;
+                transition: scale .3s ease-in-out;
+                border-radius: .3rem;
+
+                &:hover{
+                    scale: 1.1;
+                }
+            }
+        }
+}
