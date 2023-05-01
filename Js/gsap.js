@@ -12,14 +12,20 @@ toggleBtn.addEventListener("click", () => {
         image.classList.toggle("active")
     })
 
-    const state = Flip.getState(".gallery, .box, .img");
+    if(container.classList.contains("active")){
+        toggleBtn.textContent = "Grid layout"
+    } else{
+        toggleBtn.textContent = "Flex layout"
+    }
 
+    const state = Flip.getState(".gallery, .box");
 
      Flip.from(state, {
     absolute: true,
     duration: 5, 
     stagger: 0.1,
     scale: true,
-    ease: "ease"
+    prune: true,
+    ease: "back"
   });
 })      
