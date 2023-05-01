@@ -19,7 +19,13 @@ body{
             grid-template-columns: repeat(5, 360px);
             padding: 64px 80px;
             position: absolute;
-    
+
+            &.active{
+                display: flex;
+                align-items: center;
+                gap: 2rem;
+            }
+
             div {
                 width: 424px;
                 height: 400px;
@@ -50,6 +56,28 @@ body{
                 &:hover{
                     scale: 1.1;
                 }
+
+                &.active{
+                    height: 500px;
+                    width: 350px;
+                }
             }
         }
+}
+
+.toggle_container{
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    z-index: 1;
+    padding: 1.25rem;
+
+    button{
+        all: unset;
+        padding: .5rem;
+        color: black;
+        background-color: #FFD6AF;
+        outline: dashed 1.5px black;
+        cursor: pointer;
+    }
 }
